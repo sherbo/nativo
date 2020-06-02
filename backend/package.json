@@ -1,0 +1,17 @@
+{
+  "name": "nativo_backend",
+  "version": "1.0.0",
+  "description": "Nativo Fastify & Graphql Backend",
+  "entry point": "src/server.js",
+  "main": "index.js",
+  "dependencies": {
+    "fastify": "^2.14.1",
+    "fastify-gql": "^3.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sherban Drulea",
+  "license": "ISC"
+}
