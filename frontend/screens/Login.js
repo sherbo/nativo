@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
 
-import LoginButton from './LoginButton';
+import LoginButton from '../components/LoginButton';
+import EmailForm from '../components/EmailForm';
 
 export default function Login() {
   return (
-    <View style={styles.loginContainer}>
+    <View style={styles.container}>
       <Image style={styles.logo} source={require('../assets/logo.png')} />
       <View style={styles.buttonContainer}>
         <LoginButton icon='logo-google' iconColor='black' text='Sign in with Google' textColor='#929292' buttonColor='white' />
@@ -13,16 +14,22 @@ export default function Login() {
         <LoginButton icon='md-mail' iconColor='white' text='Sign in with Email' textColor='white' buttonColor='#d91224' />
         <LoginButton text='Create Account' textColor='black' buttonColor='#ffefc9' />
       </View>
+      <View style={styles.loginContainer}>
+        <EmailForm />
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  loginContainer: {
+  container: {
     justifyContent: 'center',
     alignItems: 'center'
   },
   buttonContainer: {
+    width: 300,
+  },
+  loginContainer: {
     width: 300,
   },
   logo: {

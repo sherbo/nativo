@@ -21,8 +21,6 @@ export default function LoginButton({
     color: textColor
   };
 
-  console.log(icon);
-
   return (
     <TouchableOpacity style={[styles.button, buttonStyle]}>
       <Ionicons style={iconStyle} name={icon} size={30} color={iconColor} />
