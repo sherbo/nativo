@@ -2,13 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Login from './screens/Login';
-import DeckList from './screens/DeckList';
+import Home from './screens/Home';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <DeckList />
+        <Home />
       </View>
     );
   }

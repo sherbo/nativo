@@ -1,16 +1,14 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, View, Image, Text } from 'react-native';
 
+import Navbar from '../components/Navbar';
 import DeckPreview from '../components/DeckPreview';
 import AddPackButton from '../components/AddPackButton';
 
-export default function DeckList() {
+export default function Home() {
 	return (
     <SafeAreaView style={styles.container}>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <Image source={require('../assets/logo.png')} />
-        <Image source={require('../assets/userAvatar.png')} />
-      </View>
+      <Navbar />
       <View style={styles.deckContainer}>
         <DeckPreview />
         <DeckPreview />
