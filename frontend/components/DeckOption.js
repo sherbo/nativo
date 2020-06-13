@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 
-export default function DeckPreview() {
+export default function DeckOption() {
 	return (
     <View style={styles.container}>
       <Image style={styles.image} source={require('../assets/spanishFlag.png')} />

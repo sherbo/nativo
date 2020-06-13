@@ -2,17 +2,16 @@ import React from 'react';
 import { StyleSheet, SafeAreaView, View, Image, Text } from 'react-native';
 
 import Navbar from '../components/Navbar';
-import DeckPreview from '../components/DeckPreview';
+import DeckOption from '../components/DeckOption';
 import AddPackButton from '../components/AddPackButton';
 
 export default function Home() {
 	return (
     <SafeAreaView style={styles.container}>
-      <Navbar />
       <View style={styles.deckContainer}>
-        <DeckPreview />
-        <DeckPreview />
-        <DeckPreview />
+        <DeckOption />
+        <DeckOption />
+        <DeckOption />
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center'}}>
         <Text style={{fontSize: 21, marginRight: 15}}>Learn More Words!</Text>
