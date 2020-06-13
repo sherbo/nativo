@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Image } from 'react-native';
 
 import LoginButton from '../components/LoginButton';
 import EmailForm from '../components/EmailForm';
@@ -14,7 +14,7 @@ export default class Login extends React.Component {
     const { signup, emailLogin } = this.state;
 
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Image style={styles.logo} source={require('../assets/logo.png')} />
         {(!signup && !emailLogin) && (
           <View style={styles.buttonContainer}>
@@ -36,7 +36,7 @@ export default class Login extends React.Component {
             <LoginButton icon='md-mail' iconColor='white' text='Connect with Email' textColor='white' buttonColor='#d91224' />
           </View>
         )}
-      </View>
+      </SafeAreaView>
     )
   }
 }

@@ -15,11 +15,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#ffefc9',
-    marginBottom: 5
+    marginBottom: 5,
+    width: '100%'
   },
   image: {
     height: 60,
-    width: 70,
+    width: 80,
     marginRight: 10
   }
 })
