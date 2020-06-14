@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 
-import LoginButton from './LoginButton';
+import ActionButton from './ActionButton';
 
 export default class ChangePassword extends React.Component {
   constructor(props) {
@@ -51,7 +51,7 @@ export default class ChangePassword extends React.Component {
           placeholderTextColor='black'
           style={styles.input}
         />
-        <LoginButton text='Submit' textColor='black' buttonColor='#ffefc9' />
+        <ActionButton text='Submit' textColor='black' buttonColor='#ffefc9' />
       </View>
     )
   }

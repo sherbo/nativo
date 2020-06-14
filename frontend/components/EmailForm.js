@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 
-import LoginButton from './LoginButton';
+import ActionButton from './ActionButton';
 
 export default class EmailForm extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ export default class EmailForm extends React.Component {
           placeholderTextColor='black'
           style={styles.input}
         />
-        <LoginButton text='Create Account' textColor='black' buttonColor='#ffefc9' />
+        <ActionButton text='Create Account' textColor='black' buttonColor='#ffefc9' />
       </View>
     )
   }
