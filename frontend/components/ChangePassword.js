@@ -15,7 +15,7 @@ export default class ChangePassword extends React.Component {
   }
 
   onLogin() {
-    const { oldPassword, newPassword } = this.state;
+    const { oldPassword, newPassword, confirmedPassword } = this.state;
 
     console.log('yaa duu');
   }

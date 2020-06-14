@@ -4,6 +4,7 @@ import { StyleSheet, SafeAreaView, Text } from 'react-native';
 import Login from './screens/Login';
 import Home from './screens/Home';
 import Profile from './screens/Profile';
+import Purchase from './screens/Purchase';
 import Navbar from './components/Navbar'; 
 
 export default class App extends React.Component {
@@ -11,7 +12,7 @@ export default class App extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <Navbar />
-        <Profile />
+        <Purchase />
       </SafeAreaView>
     );
   }
