@@ -7,7 +7,8 @@ export default function ActionButton({
   iconColor,
   text,
   textColor,
-  buttonColor
+  buttonColor,
+  onPress
 }) {
   const buttonStyle = {
     backgroundColor: buttonColor,
@@ -22,7 +23,7 @@ export default function ActionButton({
   };
 
   return (
-    <TouchableOpacity style={[styles.button, buttonStyle]}>
+    <TouchableOpacity style={[styles.button, buttonStyle]} onPress={onPress}>
       <Ionicons style={iconStyle} name={icon} size={30} color={iconColor} />
       <Text style={[styles.buttonText, textStyle]}>
         {text}

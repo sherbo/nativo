@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 
-export default function DeckOption() {
+export default function DeckOption({ onPress }) {
 	return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image style={styles.image} source={require('../assets/spanishFlag.png')} />
       <Text style={{fontSize:18}}>2000 Most Frequent</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 

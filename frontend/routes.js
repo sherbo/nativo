@@ -7,13 +7,40 @@ import Profile from './screens/Profile';
 import Purchase from './screens/Purchase';
 import FlashCard from './screens/FlashCard';
 
-const StackNavigator = createStackNavigator({
-	Login: {
-    screen: Login,
+const AuthScreens = createStackNavigator(
+  {
+    Login
   },
-  Home: {
-    screen: Home,
+  {
+    initialRouteName: 'Login',
+    headerShown: false,
+    headerMode: 'none'
   }
-})
+)
+
+const HomeScreens = createStackNavigator(
+  {
+    Home,
+    Profile,
+    Purchase,
+    FlashCard
+  },
+  {
+    initialRouteName: 'Home'
+  }
+)
+
+const StackNavigator = createStackNavigator(
+  {
+  	Auth: AuthScreens,
+    Home: HomeScreens
+  },
+  {
+    initialRouteName: 'Auth',
+    headerShown: false,
+    headerMode: 'none'
+  }
+)
+
 
 export default createAppContainer(StackNavigator);

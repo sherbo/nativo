@@ -11,6 +11,7 @@ export default class Login extends React.Component {
   };
 
   render() {
+    const { navigation } = this.props;
     const { signup, emailLogin } = this.state;
 
     return (
@@ -18,8 +19,8 @@ export default class Login extends React.Component {
         <Image style={styles.logo} source={require('../assets/logo.png')} />
         {(!signup && !emailLogin) && (
           <View style={styles.buttonContainer}>
-            <ActionButton icon='logo-google' iconColor='black' text='Sign in with Google' textColor='#929292' buttonColor='white' />
-            <ActionButton icon='logo-facebook' iconColor='white' text='Sign in with Facebook' textColor='white' buttonColor='#265288' />
+            <ActionButton icon='logo-google' iconColor='black' text='Sign in with Google' textColor='#929292' buttonColor='white' onPress={() => navigation.navigate('Home')} />
+            <ActionButton icon='logo-facebook' iconColor='white' text='Sign in with Facebook' textColor='white' buttonColor='#265288' onPress={() => navigation.navigate('Home')} />
             <ActionButton icon='md-mail' iconColor='white' text='Sign in with Email' textColor='white' buttonColor='#d91224' />
             <ActionButton text='Create Account' textColor='black' buttonColor='#ffefc9' />
           </View>

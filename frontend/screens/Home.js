@@ -5,17 +5,17 @@ import Navbar from '../components/Navbar';
 import DeckOption from '../components/DeckOption';
 import AddPackButton from '../components/AddPackButton';
 
-export default function Home() {
+export default function Home({ navigation }) {
 	return (
     <SafeAreaView style={styles.container}>
       <View style={styles.deckContainer}>
-        <DeckOption />
-        <DeckOption />
-        <DeckOption />
+        <DeckOption onPress={() => navigation.navigate('FlashCard')} />
+        <DeckOption onPress={() => navigation.navigate('FlashCard')} />
+        <DeckOption onPress={() => navigation.navigate('FlashCard')} />
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center'}}>
         <Text style={{fontSize: 21, marginRight: 15}}>Learn More Words!</Text>
-        <AddPackButton />
+        <AddPackButton onPress={() => navigation.navigate('Purchase')} />
       </View>
     </SafeAreaView>
   )
