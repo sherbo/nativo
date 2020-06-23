@@ -16,18 +16,21 @@ export default function ActionButton({
   };
   const iconStyle = {
     color: iconColor,
-    marginRight: icon === undefined ? 70 : 30
+    marginRight: icon === undefined ? 0 : 15
   };
   const textStyle = {
-    color: textColor
+    color: textColor,
+    textAlign: icon === undefined ? 'center' : 'left'
   };
 
   return (
     <TouchableOpacity style={[styles.button, buttonStyle]} onPress={onPress}>
       <Ionicons style={iconStyle} name={icon} size={30} color={iconColor} />
-      <Text style={[styles.buttonText, textStyle]}>
-        {text}
-      </Text>
+      <View style={styles.textContainer}>
+        <Text style={[styles.buttonText, textStyle]}>
+          {text}
+        </Text>
+      </View>
     </TouchableOpacity>
   )
 }
@@ -37,12 +40,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 15,
-    marginBottom: 15
+    marginBottom: 15,
+    width: '100%'
   },
-  icon: {
+  textContainer: {
+    width: '100%'
   },
   buttonText: {
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'center'
   },
 });

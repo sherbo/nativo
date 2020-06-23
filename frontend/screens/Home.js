@@ -8,6 +8,7 @@ import AddPackButton from '../components/AddPackButton';
 export default function Home({ navigation }) {
 	return (
     <SafeAreaView style={styles.container}>
+      <Navbar onPress={() => navigation.navigate('Profile')} />
       <View style={styles.deckContainer}>
         <DeckOption onPress={() => navigation.navigate('FlashCard')} />
         <DeckOption onPress={() => navigation.navigate('FlashCard')} />
@@ -23,8 +24,7 @@ export default function Home({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'space-between'
+    flex: 1
   },
   deckContainer: {
     justifyContent: 'center',

@@ -1,0 +1,54 @@
+{
+	"owned": [
+		{
+			"id": 0,
+			"name": "2000 Most Freq...",
+			"country": "Spain"
+
+		},
+		{
+			"id": 1,
+			"name": "Food",
+			"country": "Spain"
+
+		},
+		{
+			"id": 2,
+			"name": "Slang",
+			"country": "Colombia"
+
+		}
+	],
+	"purchase": [
+		{
+			"id": 4,
+			"name": "Slang",
+			"country": "Mexico"
+
+		},
+		{
+			"id": 5,
+			"name": "2000 Most Frequent Words",
+			"country": "Portugal"
+
+		},
+		{
+			"id": 6,
+			"name": "Slang",
+			"country": "USA"
+
+		},
+		{
+			"id": 7,
+			"name": "2000 Most Frequent Words",
+			"country": "Germany"
+
+		},
+		{
+			"id": 8,
+			"name": "2000 Most Frequent Words",
+			"country": "Russia"
+
+		}
+	]
+}
