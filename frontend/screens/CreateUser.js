@@ -3,8 +3,8 @@ import { StyleSheet, SafeAreaView, View, Image } from 'react-native';
 
 import ActionButton from '../components/ActionButton';
 
-export default class Login extends React.Component {
-  render() {
+export default class CreateUser extends React.Component {
+	render() {
     const { navigation } = this.props;
 
     return (
@@ -14,7 +14,7 @@ export default class Login extends React.Component {
           <ActionButton 
             icon='logo-google' 
             iconColor='black' 
-            text='Sign in with Google' 
+            text='Connect with Google' 
             textColor='#929292' 
             buttonColor='white' 
             borderColor='lightgray' 
@@ -23,7 +23,7 @@ export default class Login extends React.Component {
           <ActionButton 
             icon='logo-facebook' 
             iconColor='white' 
-            text='Sign in with Facebook' 
+            text='Connect with Facebook' 
             textColor='white' 
             buttonColor='#265288' 
             onPress={() => navigation.navigate('Home')} 
@@ -31,16 +31,10 @@ export default class Login extends React.Component {
           <ActionButton 
             icon='md-mail' 
             iconColor='white' 
-            text='Sign in with Email' 
+            text='Create with Email' 
             textColor='white' 
             buttonColor='#d91224' 
             onPress={() => navigation.navigate('EmailLogin')} 
-          />
-          <ActionButton 
-            text='Create Account' 
-            textColor='black' 
-            buttonColor='#ffefc9'
-            onPress={() => navigation.navigate('CreateUser')} 
           />
         </View>
       </SafeAreaView>
