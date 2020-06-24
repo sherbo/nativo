@@ -1,25 +1,54 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, View, Image, Text } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Image, Text, FlatList } from 'react-native';
 
 import Navbar from '../components/Navbar';
 import DeckOption from '../components/DeckOption';
 import AddPackButton from '../components/AddPackButton';
 
-export default function Home({ navigation }) {
-	return (
-    <SafeAreaView style={styles.container}>
-      <Navbar onPress={() => navigation.navigate('Profile')} />
-      <View style={styles.deckContainer}>
-        <DeckOption onPress={() => navigation.navigate('FlashCard')} />
-        <DeckOption onPress={() => navigation.navigate('FlashCard')} />
-        <DeckOption onPress={() => navigation.navigate('FlashCard')} />
-      </View>
-      <View style={{flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center'}}>
-        <Text style={{fontSize: 21, marginRight: 15}}>Learn More Words!</Text>
-        <AddPackButton onPress={() => navigation.navigate('Purchase')} />
-      </View>
-    </SafeAreaView>
-  )
+import { fetchUserDecks } from '../utils/api';
+
+export default class Home extends React.Component {
+  state = {
+    decks: []
+  };
+
+  async componentDidMount() {
+    const decks = await fetchUserDecks();
+
+    this.setState({ decks });
+  }
+
+  renderDeck = ({ item }) => {
+    const { navigation } = this.props;
+    const { id, name, country } = item;
+
+    return (
+      <DeckOption name={name} country={country} />
+    );
+  }
+
+  render() {
+    const { navigation } = this.props;
+    const { decks } = this.state;
+
+    return (
+      <SafeAreaView style={styles.container}>
+        <Navbar onPress={() => navigation.navigate('Profile')} />
+        <View style={styles.deckContainer}>
+          <FlatList
+            data={decks}
+            renderItem={this.renderDeck}
+            keyExtractor={item => item.id.toString()}
+          />
+          <View style={{flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center'}}>
+            <Text style={{fontSize: 21, marginRight: 15}}>Learn More Words!</Text>
+            <AddPackButton onPress={() => navigation.navigate('Purchase')} />
+          </View>
+        </View>
+      </SafeAreaView>
+    )
+  }
+	
 }
 
 const styles = StyleSheet.create({
@@ -27,7 +56,10 @@ const styles = StyleSheet.create({
     flex: 1
   },
   deckContainer: {
-    justifyContent: 'center',
-    alignItems: 'center'
+    flex: 1,
+    marginTop: 30,
+    marginLeft: '5%',
+    marginRight: '5%',
+    justifyContent: 'space-between'
   }
 })

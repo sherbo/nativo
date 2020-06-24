@@ -23,7 +23,9 @@ const HomeScreens = createStackNavigator(
   {
     Home,
     Purchase,
-    FlashCard
+    FlashCard,
+    Profile,
+    DeckEditor
   }
 )
 
@@ -37,8 +39,7 @@ const ProfileScreens = createStackNavigator(
 const StackNavigator = createStackNavigator(
   {
   	Auth: AuthScreens,
-    Home: HomeScreens,
-    Profile: ProfileScreens
+    Home: HomeScreens
   },
   {
     initialRouteName: 'Auth',

@@ -19,7 +19,6 @@ export default class DeckEditor extends React.Component {
   }
 
   renderDeck = ({ item }) => {
-    const { navigation } = this.props;
     const { id, name, country, image } = item;
 
     return (
@@ -31,6 +30,7 @@ export default class DeckEditor extends React.Component {
   }
 
   render() {
+    const { navigation } = this.props;
     const { decks } = this.state;
 
     return (
