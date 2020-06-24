@@ -14,7 +14,7 @@ export default function DeckOption({
 	return (
     <TouchableOpacity style={[styles.container, style]} onPress={onPress}>
       <Image style={styles.image} source={getImage(country)} />
-      <Text style={{fontSize:18}}>{name}</Text>
+      <Text style={styles.text}>{name}</Text>
     </TouchableOpacity>
   )
 }
@@ -31,5 +31,8 @@ const styles = StyleSheet.create({
     height: 60,
     width: 80,
     marginRight: 10
+  },
+  text: {
+    fontSize: 18
   }
 })

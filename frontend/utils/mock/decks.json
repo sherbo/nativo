@@ -23,32 +23,32 @@
 		{
 			"id": 4,
 			"name": "Slang",
-			"country": "Mexico"
-
+			"country": "Mexico",
+			"price": "$1.99"
 		},
 		{
 			"id": 5,
-			"name": "2000 Most Frequent Words",
-			"country": "Portugal"
-
+			"name": "2000 Most Freq...",
+			"country": "Portugal",
+			"price": "$4.99"
 		},
 		{
 			"id": 6,
 			"name": "Slang",
-			"country": "USA"
-
+			"country": "USA",
+			"price": "$1.99"
 		},
 		{
 			"id": 7,
-			"name": "2000 Most Frequent Words",
-			"country": "Germany"
-
+			"name": "2000 Most Freq...",
+			"country": "Germany",
+			"price": "$4.99"
 		},
 		{
 			"id": 8,
-			"name": "2000 Most Frequent Words",
-			"country": "Russia"
-
+			"name": "2000 Most Freq...",
+			"country": "Russia",
+			"price": "$4.99"
 		}
 	]
 }
