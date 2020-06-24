@@ -8,15 +8,17 @@ export default function ActionButton({
   text,
   textColor,
   buttonColor,
+  borderColor,
   onPress
 }) {
   const buttonStyle = {
     backgroundColor: buttonColor,
-    paddingVertical: icon === undefined ? 15 : 10 
+    paddingVertical: icon === undefined ? 15 : 10,
+    borderColor: borderColor === undefined ? 'transparent' : borderColor
   };
   const iconStyle = {
     color: iconColor,
-    marginRight: icon === undefined ? 0 : 15
+    marginRight: icon === undefined ? 0 : 30
   };
   const textStyle = {
     color: textColor,
@@ -41,7 +43,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 15,
     marginBottom: 15,
-    width: '100%'
+    width: '100%',
+    borderWidth: 2
   },
   textContainer: {
     width: '100%'
