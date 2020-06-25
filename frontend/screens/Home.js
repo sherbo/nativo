@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, View, Image, Text, FlatList } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Text, FlatList } from 'react-native';
 
 import Navbar from '../components/Navbar';
 import DeckOption from '../components/DeckOption';
@@ -23,7 +23,7 @@ export default class Home extends React.Component {
     const { id, name, country } = item;
 
     return (
-      <DeckOption name={name} country={country} />
+      <DeckOption name={name} country={country} onPress={() => navigation.navigate('Deck')} />
     );
   }
 

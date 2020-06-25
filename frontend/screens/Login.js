@@ -17,7 +17,8 @@ export default class Login extends React.Component {
             text='Sign in with Google' 
             textColor='#929292' 
             buttonColor='white' 
-            borderColor='lightgray' 
+            borderColor='lightgray'
+            style={{marginBottom: 15}}
             onPress={() => navigation.navigate('Home')} 
           />
           <ActionButton 
@@ -26,6 +27,7 @@ export default class Login extends React.Component {
             text='Sign in with Facebook' 
             textColor='white' 
             buttonColor='#265288' 
+            style={{marginBottom: 15}}
             onPress={() => navigation.navigate('Home')} 
           />
           <ActionButton 
@@ -33,7 +35,8 @@ export default class Login extends React.Component {
             iconColor='white' 
             text='Sign in with Email' 
             textColor='white' 
-            buttonColor='#d91224' 
+            buttonColor='#d91224'
+            style={{marginBottom: 15}}
             onPress={() => navigation.navigate('EmailLogin')} 
           />
           <ActionButton 

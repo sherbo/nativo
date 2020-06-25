@@ -1,0 +1,43 @@
+{
+	"demo": [
+		{
+			"id": 0,
+			"word": "Rojo",
+			"ipa": "/ˈroxo/",
+			"example": "La manzana es roja",
+			"audio": "amazon.s3.com"
+
+		},
+		{
+			"id": 1,
+			"word": "Perro",
+			"ipa": "ˈpe.ʁu",
+			"example": "Tengo un perro",
+			"audio": "amazon.s3.com"
+
+		},
+		{
+			"id": 2,
+			"word": "Pavo",
+			"ipa": "/ˈpabo/, [ˈpaβo]",
+			"example": "Comemos pavo en acción de gracias",
+			"audio": "amazon.s3.com"
+
+		},
+		{
+			"id": 3,
+			"word": "Moto",
+			"ipa": "/ˈmoː.toː/, [ˈmoː.t̪oː]",
+			"example": "Yo manejo la moto",
+			"audio": "amazon.s3.com"
+
+		},
+		{
+			"id": 4,
+			"word": "Boca",
+			"ipa": "/ˈboka/",
+			"example": "Tengo la boca abierta",
+			"audio": "amazon.s3.com"
+		}
+	]
+}

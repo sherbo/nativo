@@ -9,9 +9,27 @@ export default function Profile({ navigation }) {
     <SafeAreaView style={styles.container}>
       <Navbar style={styles.navbar} onPress={() => navigation.navigate('Profile')} />
       <View style={styles.buttonContainer}>
-        <ActionButton text='Manage Decks' textColor='black' buttonColor='#ffefc9' onPress={() => navigation.navigate('DeckEditor')} />
-        <ActionButton text='Change Password' textColor='black' buttonColor='#ffefc9' onPress={() => navigation.navigate('Profile')} />
-        <ActionButton text='Delete Account' textColor='black' buttonColor='#ffefc9' onPress={() => navigation.navigate('Profile')} />
+        <ActionButton 
+          text='Manage Decks' 
+          textColor='black' 
+          buttonColor='#ffefc9'
+          style={{marginBottom: 15}}
+          onPress={() => navigation.navigate('DeckEditor')} 
+        />
+        <ActionButton 
+          text='Change Password' 
+          textColor='black' 
+          buttonColor='#ffefc9'
+          style={{marginBottom: 15}}
+          onPress={() => navigation.navigate('Profile')} 
+        />
+        <ActionButton 
+          text='Delete Account' 
+          textColor='black' 
+          buttonColor='#ffefc9'
+          style={{marginBottom: 15}}
+          onPress={() => navigation.navigate('Profile')} 
+        />
       </View>
     </SafeAreaView>
   )

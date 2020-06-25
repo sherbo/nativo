@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 
-import getImage from '../utils/getImage';
+import getCountryImage from '../utils/getCountryImage';
 
 export default function DeckOption({ 
   id, 
@@ -13,7 +13,7 @@ export default function DeckOption({
 }) {
 	return (
     <TouchableOpacity style={[styles.container, style]} onPress={onPress}>
-      <Image style={styles.image} source={getImage(country)} />
+      <Image style={styles.image} source={getCountryImage(country)} />
       <Text style={styles.text}>{name}</Text>
     </TouchableOpacity>
   )

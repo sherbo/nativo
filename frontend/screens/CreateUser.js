@@ -17,7 +17,8 @@ export default class CreateUser extends React.Component {
             text='Connect with Google' 
             textColor='#929292' 
             buttonColor='white' 
-            borderColor='lightgray' 
+            borderColor='lightgray'
+            style={{marginBottom: 15}}
             onPress={() => navigation.navigate('Home')} 
           />
           <ActionButton 
@@ -25,7 +26,8 @@ export default class CreateUser extends React.Component {
             iconColor='white' 
             text='Connect with Facebook' 
             textColor='white' 
-            buttonColor='#265288' 
+            buttonColor='#265288'
+            style={{marginBottom: 15}}
             onPress={() => navigation.navigate('Home')} 
           />
           <ActionButton 

@@ -9,12 +9,15 @@ export default function ActionButton({
   textColor,
   buttonColor,
   borderColor,
-  onPress
+  width,
+  onPress,
+  style
 }) {
   const buttonStyle = {
     backgroundColor: buttonColor,
     paddingVertical: icon === undefined ? 15 : 10,
-    borderColor: borderColor === undefined ? 'transparent' : borderColor
+    borderColor: borderColor === undefined ? 'transparent' : borderColor,
+    width: width === undefined ? '100%' : width
   };
   const iconStyle = {
     color: iconColor,
@@ -26,7 +29,7 @@ export default function ActionButton({
   };
 
   return (
-    <TouchableOpacity style={[styles.button, buttonStyle]} onPress={onPress}>
+    <TouchableOpacity style={[styles.button, buttonStyle, style]} onPress={onPress}>
       <Ionicons style={iconStyle} name={icon} size={30} color={iconColor} />
       <View style={styles.textContainer}>
         <Text style={[styles.buttonText, textStyle]}>
@@ -42,8 +45,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 15,
-    marginBottom: 15,
-    width: '100%',
     borderWidth: 2
   },
   textContainer: {
