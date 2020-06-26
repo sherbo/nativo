@@ -8,15 +8,17 @@ import getCardImage from '../utils/getCardImage';
 
 export default class FlashCard extends React.Component {
   state = {
-    answerChecked: true
+    answerChecked: false
   };
 
   onCardPress = () => {
     this.setState({ answerChecked: true });
   }
 
-  onAnswerPress = () => {
-    this.setState({ answerChecked: false })
+  onAnswerPress = answerCorrect => {
+    const { onPress } = this.props;
+
+    answerCorrect ? onPress(true) : onPress(false);
   }
 
   render() {
@@ -26,7 +28,7 @@ export default class FlashCard extends React.Component {
     return (
       <View style={{flex: 1}}>
         {!answerChecked &&
-          <TouchableOpacity style={styles.frontContainer} onPress={this.onCardPress}>
+          <TouchableOpacity style={styles.frontContainer} onPress={() => this.onCardPress()}>
             <Image style={styles.image} source={getCardImage(word)} />
           </TouchableOpacity>
         }
@@ -34,17 +36,19 @@ export default class FlashCard extends React.Component {
           <View style={styles.backContainer}>
              <View style={styles.wordContainer}>
                 <Text style={styles.word}>
-                  Perro
+                  {word}
                 </Text>
                 <View style={styles.ipaContainer}>
                   <Text style={styles.ipa}>
-                    ˈpe.ʁu
+                    {ipa}
                   </Text>
                   <TouchableOpacity style={styles.audioButton}>
                     <Ionicons name='ios-volume-high' size={30} color='white' style={styles.audioIcon} />
                   </TouchableOpacity>
                </View>
-               <Text style={styles.example}>Tengo un perro</Text>
+               <Text style={styles.example}>
+                 {example}
+               </Text>
              </View>
              <View style={styles.actionContainer}>
               <ActionButton 
@@ -52,7 +56,7 @@ export default class FlashCard extends React.Component {
                 textColor='white' 
                 width='50%'
                 buttonColor='#d63927'
-                onPress={this.onAnswerPress}
+                onPress={() => this.onAnswerPress(false)}
                 style={styles.actionButton}
               />
               <ActionButton 
@@ -60,7 +64,7 @@ export default class FlashCard extends React.Component {
                 textColor='white'
                 width='50%'
                 buttonColor='#559c4f'
-                onPress={this.onAnswerPress}
+                onPress={() => this.onAnswerPress(true)}
                 style={styles.actionButton}
               />
             </View>
@@ -93,14 +97,14 @@ const styles = StyleSheet.create({
   },
   word: {
     fontSize: 40,
-    marginBottom: 40,
+    marginBottom: 50,
     textAlign: 'center'
   },
   ipaContainer: {
     flexDirection: 'row', 
     justifyContent: 'center', 
     alignItems: 'center',
-    marginBottom: 40
+    marginBottom: 50
   },
   ipa: {
     fontSize: 18,

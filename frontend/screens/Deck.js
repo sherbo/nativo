@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, View, Image } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Text, Image } from 'react-native';
 
 import FlashCard from '../components/FlashCard';
 
@@ -13,18 +13,39 @@ export default class Deck extends React.Component {
 
   async componentDidMount() {
     const cards = await fetchFlashCards();
-
     this.setState({ cards });
+  }
+
+  onAnswerChosen = answer => {
+    const { currentCard } = this.state;
+    // Record the answer to the system
+    // do api shit here
+    // Go to the next card
+    this.setState({ currentCard: currentCard + 1 });
   }
 
   render() {
     const { cards, currentCard } = this.state;
 
-    return (
+    const card = Object.keys(cards).map((key) => {
+      if (key === currentCard.toString()) {
+        return (
+          <FlashCard 
+            word={cards[key].word}
+            ipa={cards[key].ipa}
+            example={cards[key].example}
+            onPress={this.onAnswerChosen}
+          />
+        )
+      }
+    })
+
+    return ( 
       <SafeAreaView style={styles.container}>
-        <FlashCard word='Perro' ipa='pe.ʁu' example='Tengo un perro.' />
+        {card}
       </SafeAreaView>
     )
+
   }
 }
 
